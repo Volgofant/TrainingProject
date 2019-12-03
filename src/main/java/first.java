@@ -9,7 +9,12 @@ public class first {
         String methodName = scanner.next();
 
         Method m = classObject1.getMethod(methodName, classObject2);
+        Object o1 = classObject1.newInstance();
+        Object o2 = classObject2.getConstructor(String.class).newInstance("String value");
 
+        m.invoke(o1, o2);
+
+        System.out.println(o1);
     }
 
 }
